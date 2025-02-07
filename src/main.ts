@@ -12,8 +12,9 @@ Sentry.init({
         name: "error-span",
         attributes: {
           "exit.reason": "your-reason-here",
-          // if you want, you can also add the trace_id to the error
+          // if you want, you can also add data about the error here
           "error.trace_id": event.contexts?.trace?.trace_id,
+          "error.event_id": event.event_id,
         },
       },
       () => {}
